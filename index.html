@@ -3,31 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="src/style.css">
     <title>ByteTech</title>
 </head>
 <body>
     <header>
-        <h1>ByteTech</h1> 
-
-        <button>Whatsapp</button>
+        <h1 class="logo">ByteTech</h1>
+        <nav class="menu">
+            <div class="menu-icon" onclick="toggleMenu()">
+                ☰
+            </div>
+            <ul id="menu-list">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
-
     <main>
-        <section>
-            <img src="">
-            <h4>Bem-vindos a ByteTec, referência em equipamentos
-                de hardware e soluções tecnológicas em Boa Viagem. Com uma ampla
-                gama de produtos, que vão desde componentes basicos até acessórios
-                de alto desempenho. Nossa equipe de especialistas está sempre
-                pronta para oferecer assistência técnica personalizada, garantindo que
-                você encontre exatamente o que precisa para suas necessidades tecnológicas.
+        <section class="primeira">
+            <img class="img_inicial" src="src/img/imagem_inicial.jpg">
+        <div class="container">
+            <h4 class="primeiro-paragrafo">Bem-vindos a ByteTec<br> Referência em equipamentos
+                de hardware e soluções tecnológicas<br> em Boa Viagem.
             </h4>
+            <button class="produtos1">Explore Nossos Produtos</button>
+        </div>
         </section>
 
         <section>
-            <p>Aqui ficará as logos das marcas que venderemos</p>
+            <div class="carrossel">
+                <div class="carrossel-conteudo">
+                    <img src="src/img/acer.png" alt="Logo 1">
+                    <img src="src/img/asus.png" alt="Logo 2">
+                    <img src="src/img/corsair.png" alt="Logo 3">
+                    <img src="src/img/kingston.png" alt="Logo 4">
+                    <img src="src/img/logitech.png" alt="Logo 5">
+                    <img src="src/img/lenovo.png" alt="Logo 6">
+                    <img src="src/img/sansung.png" alt="Logo 7">
+                    <img src="src/img/sandisk.png" alt="Logo 8">
+                </div>
+            </div>
         </section>
 
         <section>
@@ -112,9 +131,35 @@
 
 
     <footer>
-
+        <p>&copy; 2025 ByteTech. Todos os direitos reservados.</p>
     </footer>
 
+
+
+
+
+    <script>
+        function toggleMenu() {
+            let menu = document.getElementById("menu-list");
+            menu.classList.toggle("active");
+        }
+        
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const carrossel = document.querySelector(".carrossel-conteudo");
+    const logos = Array.from(carrossel.children);
+
+    // Duplicar logos para rolagem infinita
+    logos.forEach((logo) => {
+        const clone = logo.cloneNode(true);
+        carrossel.appendChild(clone);
+    });
+});
+
+        
+
+
+    </script>
     
 </body>
 </html>
